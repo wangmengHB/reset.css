@@ -1,0 +1,33 @@
+{
+  "name": "utility.css",
+  "version": "1.0.0",
+  "description": "css resets and collection of global css utilities such as clearfix, etc",
+  "main": "utility.css",
+  "style": "utility.css",
+  "files": [
+    "utility.css",
+    "utility.min.css"
+  ],
+  "scripts": {
+    "build": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wangmengHB/reset.css.git"
+  },
+  "keywords": [
+    "reset",
+    "css"
+  ],
+  "author": "Meng Wang <wangmeng_hb@163.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wangmengHB/reset.css/issues"
+  },
+  "homepage": "https://github.com/wangmengHB/reset.css#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-csso": "^3.0.1",
+    "gulp-rename": "^1.4.0"
+  }
+}
