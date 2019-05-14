@@ -1,7 +1,8 @@
 const { src, dest, parallel } = require('gulp');
 const minifyCSS = require('gulp-csso');
 const rename = require('gulp-rename');
-const { name } = require('./package.json');
+
+const name = 'utility.css';
 
 function css() {
   return src(name)

@@ -1,5 +1,5 @@
 {
-  "name": "utility.css",
+  "name": "@mengd/utilities.css",
   "version": "1.0.0",
   "description": "css resets and collection of global css utilities such as clearfix, etc",
   "main": "utility.css",
