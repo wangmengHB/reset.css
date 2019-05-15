@@ -2,7 +2,7 @@ const { src, dest, parallel } = require('gulp');
 const minifyCSS = require('gulp-csso');
 const rename = require('gulp-rename');
 
-const name = 'utility.css';
+const name = 'util.css';
 
 function css() {
   return src(name)
