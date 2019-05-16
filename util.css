@@ -1,14 +1,17 @@
 /* 
+part 1.
 Normalization of HTML elements to prevent unexpected default style for all browsers.
 */
 
-@font-face {
-  font-family: "Chinese Quote";
-  src: local("PingFang SC"), local("SimSun");
-  unicode-range: U+2018, U+2019, U+201c, U+201d;
-}
-
-body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
+body,div,
+dl,dt,dd,
+ul,ol,li,
+h1,h2,h3,h4,h5,h6,hgroup,
+pre,code,
+form,fieldset,legend,input,textarea,button,
+p,blockquote,th,td,hr,
+article,aside,details,figcaption,figure,
+footer,header,menu,nav,section {
   margin: 0;
   padding: 0;
 }
@@ -16,6 +19,12 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input
 ul,
 ol {
   list-style: none;
+}
+
+@font-face {
+  font-family: "Chinese Quote";
+  src: local("PingFang SC"), local("SimSun");
+  unicode-range: U+2018, U+2019, U+201c, U+201d;
 }
 
 html, body {
@@ -45,62 +54,63 @@ input::-ms-clear, input::-ms-reveal {
 }
 
 html {
-  font-family: sans-serif; 
-  line-height: 1.15;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -ms-overflow-style: scrollbar;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  font-family: sans-serif;                          /* 2 */
+  line-height: 1.15;                                /* 3 */
+  -webkit-text-size-adjust: 100%;                   /* 4 */
+  -ms-text-size-adjust: 100%;                       /* 4 */
+  -ms-overflow-style: scrollbar;                    /* 5 */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);  /* 6 */
 }
 
 /* IE10+ doesn't honor `<meta name="viewport">` in some cases. */
 @-ms-viewport { width: device-width; }
 
 /* Shim for "new" HTML5 structural elements to display correctly (IE10, older browsers) */
-article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, section {
+article, aside, dialog, figcaption, figure, 
+footer, header, hgroup, main, nav, section {
   display: block;
 }
 
-
-
-/* Suppress the focus outline on elements that cannot be accessed via keyboard.
+/* 
+Suppress the focus outline on elements that cannot be accessed via keyboard.
 This prevents an unwanted focus outline from appearing around elements that
 might still respond to pointer events.
-
-Credit: https:github.com/suitcss/base */
+Credit: https:github.com/suitcss/base 
+*/
 [tabindex="-1"]:focus {
   outline: none !important;
 }
 
-/* Content grouping
-
+/* 
+Content grouping
 1. Add the correct box sizing in Firefox.
-2. Show the overflow in Edge and IE. */
+2. Show the overflow in Edge and IE. 
+*/
 
 hr {
-  box-sizing: content-box;
-  height: 0;
-  overflow: visible;
+  box-sizing: content-box;      /* 1 */
+  height: 0;                    /* 1 */
+  overflow: visible;            /* 2 */
 }
 
 /* 
 Typography
-
-
 remove top margins from headings
-
 By default, `<h1>`-`<h6>` all receive top and bottom margins. We nuke the top
-margin for easier control within type scales as it avoids margin collapsing. */
+margin for easier control within type scales as it avoids margin collapsing. 
+*/
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
   margin-bottom: .5em;
   font-weight: 500;
 }
 
-/* Reset margins on paragraphs
+/* 
+Reset margins on paragraphs
 
 Similarly, the top margin on `<p>`s get reset. However, we also reset the
-bottom margin to use `em` units instead of `em`. */
+bottom margin to use `em` units instead of `em`. 
+*/
 p {
   margin-top: 0;
   margin-bottom: 1em;
@@ -111,14 +121,14 @@ p {
 1. remove the bottom border in Firefox 39-.
 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
 3. Add explicit cursor to indicate changed behavior.
-4. Duplicate behavior to the data-* attribute for our tooltip plugin */
-
+4. Duplicate behavior to the data-* attribute for our tooltip plugin 
+*/
 abbr[title],
-abbr[data-original-title] {
-  text-decoration: underline;
-  text-decoration: underline dotted;
-  cursor: help;
-  border-bottom: 0;
+abbr[data-original-title] {               /* 4 */
+  text-decoration: underline;             /* 2 */
+  text-decoration: underline dotted;      /* 2 */
+  cursor: help;                           /* 3 */
+  border-bottom: 0;                       /* 1 */
 }
 
 address {
@@ -154,8 +164,7 @@ dt {
 
 dd {
   margin-bottom: .5em;
-  margin-left: 0; 
-  /* Undo browser default */
+  margin-left: 0;             
 }
 
 blockquote {
@@ -163,19 +172,16 @@ blockquote {
 }
 
 dfn {
-  font-style: italic; 
-  /* Add the correct font style in Android 4.3- */
+  font-style: italic;  /* Add the correct font style in Android 4.3- */
 }
 
 b,
 strong {
-  font-weight: bolder; 
-  /* Add the correct font weight in Chrome, Edge, and Safari */
+  font-weight: bolder; /* Add the correct font weight in Chrome, Edge, and Safari */
 }
 
 small {
-  font-size: 80%; 
-  /* Add the correct font size in all browsers */
+  font-size: 80%;   /* Add the correct font size in all browsers */
 }
 
 /* 
@@ -454,4 +460,19 @@ mark {
   padding: .2em;
 }
 
+/*
+part 2. css utils
+*/
+.clearfix {
+  zoom: 1;
+}
+.clearfix::before{
+  content: '';
+  display: table;
+}
+.clearfix::after {
+  content: '';
+  display: table;
+  clear: both;
+}
 

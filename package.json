@@ -1,6 +1,6 @@
 {
   "name": "@mengd/util.css",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "css resets and collection of global css utilities such as clearfix, etc",
   "main": "util.css",
   "style": "util.css",
